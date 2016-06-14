@@ -26,21 +26,24 @@
 	
 	
 	<?php 
-		$produk = $this->uri->segment(2);
-		if($produk == "produk"){
+		//$produk = $this->uri->segment(2);
+		//if($produk == "produk"){
 		?>
 		<link href="<?php echo base_url();?>assets/admin/assets/advanced-datatable/media/css/demo_page.css" rel="stylesheet" />
 		<link href="<?php echo base_url();?>assets/admin/assets/advanced-datatable/media/css/demo_table.css" rel="stylesheet" />
 	<?php
-		}else{
-			echo "";
-		}
+		//}else{
+		//	echo "";
+		//}
 	?>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
     <!--[if lt IE 9]>
       <script src="<?php echo base_url();?>assets/admin/js/html5shiv.js"></script>
       <script src="<?php echo base_url();?>assets/admin/js/respond.min.js"></script>
     <![endif]-->
+    <script src="<?php echo base_url();?>assets/admin/js/jquery.js"></script>
+    <script src="<?php echo base_url();?>assets/admin/js/jquery-1.8.3.min.js"></script>
+
   </head>
 
   <body>

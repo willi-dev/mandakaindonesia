@@ -8,48 +8,48 @@
 		$msgerror = $this->session->flashdata('messageerror');
 		echo $msgerror == '' ? '' : '<div class="alert alert-success alert-danger fade in"><button class="close close-sm" type="button" data-dismiss="alert"><i class="icon-remove"></i></button><strong>' . $msgerror . '!</strong></div>';
 		?>
-		<section class="panel">
+		<!-- <section class="panel">
 			<header class="panel-heading">Atur Ulang Kata Sandi</header>
 			<div class="panel-body">Di sini anda dapat mengatur ulang kata sandi anda</div>
-		</section>
+		</section> -->
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-lg-12">
 		<section class="panel">
-			<header class="panel-heading">Kata Sandi : minimal 7 karakter !</header>
+			<header class="panel-heading">Password: min. 7 Characters</header>
 			<div class="panel-body">
 				<?php
 					$att = array('id' => '', 'class' => 'form-horizontal tasi-form', 'name' => 'formsetting', 'method'=>'POST' );
 					echo form_open('administrator/update_password', $att);
 				?>
 					<div class="form-group">
-						<label class="col-sm-2 col-sm-2 control-label" for="name">Nama</label>
+						<label class="col-sm-2 col-sm-2 control-label" for="name">Username</label>
 						<div class="col-sm-10">
 							<input type="text" id="name" class="form-control" name="user" value="<?php echo $username;?>" disabled />
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="col-sm-2 col-sm-2 control-label" for="oldpass">Kata Sandi Lama</label>
+						<label class="col-sm-2 col-sm-2 control-label" for="oldpass">Old Password</label>
 						<div class="col-sm-10">
-							<input id="oldpass" class="form-control" type="password" name="oldpassword" placeholder="Kata Sandi Lama" />
+							<input id="oldpass" class="form-control" type="password" name="oldpassword" placeholder="Old Password" />
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="col-sm-2 col-sm-2 control-label" for="retype">(Ketik ulang) Kata Sandi Lama</label>
+						<label class="col-sm-2 col-sm-2 control-label" for="retype">(re-type) Old Password</label>
 						<div class="col-sm-10">
-							<input id="retype" class="form-control" type="password" name="retypeoldpassword" placeholder="(Ketik ulang) Kata Sandi Lama" />
+							<input id="retype" class="form-control" type="password" name="retypeoldpassword" placeholder="(re-type) Old Password" />
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="col-sm-2 col-sm-2 control-label" for="newpass">Kata Sandi Baru</label>
+						<label class="col-sm-2 col-sm-2 control-label" for="newpass">New Password</label>
 						<div class="col-sm-10">
-							<input id="newpass" class="form-control" type="password" name="newpassword" placeholder="Kata Sandi Baru" />
+							<input id="newpass" class="form-control" type="password" name="newpassword" placeholder="New Password" />
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="col-sm-12">
-							<button type="submit" id="savepass" class="btn btn-warning btn-lg" >Simpan</button>
+							<button type="submit" id="savepass" class="btn btn-warning btn-lg" >Save</button>
 						</div>
 					</div>
 			

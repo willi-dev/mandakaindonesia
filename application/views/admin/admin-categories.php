@@ -7,10 +7,10 @@
 		$msgerror = $this->session->flashdata('messageerror');
 		echo $msgerror == '' ? '' : '<div class="alert alert-success alert-danger fade in"><button class="close close-sm" type="button" data-dismiss="alert"><i class="icon-remove"></i></button><strong>' . $msgerror . '!</strong></div>';
 		?>
-		<section class="panel">
+		<!-- <section class="panel">
 			<header class="panel-heading">Kategori</header>
 			<div class="panel-body">Di sini anda dapat melihat, mengubah, menambahkan, dan menghapus kategori</div>
-		</section>
+		</section> -->
 	</div>
 </div>
 <div class="row">

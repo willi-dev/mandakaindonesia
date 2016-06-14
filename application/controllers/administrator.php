@@ -28,8 +28,9 @@
 		 */
 		public function all_products(){
 			$data = array(
-				'title' => "All Products",
-				'menu_mainactive' => 'active'
+				'title' => 'Daftar Produk',
+				'menu_produkactive' => 'active',
+				'loadProduct' => $this->modeladmin->loadProduct(),
 			);
 			$this->load->view( 'admin/admin-all-products', $data );
 		}
@@ -37,7 +38,7 @@
 		/**
 		 * categories()
 		 * @params -
-		 * @return html layout
+		 * @return html layout categories
 		 */
 		public function categories(){
 			$data = array(
@@ -48,6 +49,11 @@
 			$this->load->view('admin/admin-categories', $data);
 		}
 
+		/**
+		 * user_password()
+		 * @params - 
+		 * @return html layout user password
+		 */
 		public function user_password(){
 			$data = array(
 				'user_id' => $this->tank_auth->get_user_id(),
@@ -59,6 +65,11 @@
 			$this->load->view('admin/admin-user_password', $data);
 		}
 		
+		/**
+		 * update_password()
+		 * @params - 
+		 * @return -
+		 */
 		function update_password(){
 			$oldpass = $this->input->post('oldpassword');
 			$retypeoldpass = $this->input->post('retypeoldpassword');
@@ -81,7 +92,42 @@
 			}
 		}
 
-		
+		/**
+		 * page_about()
+		 * @params - 
+		 * @return html layout page_about
+		 */
+		function page_about(){
+			$data = array(
+				'title' => 'Page About'
+			);
+			$this->load->view( 'admin/admin-page_about', $data );
+		}
+
+		/**
+		 * page_contact()
+		 * @params - 
+		 * @return html layout page_contact
+		 */
+		function page_contact(){
+			$data = array( 
+				'title' => 'Page Contact'
+			);
+			$this->load->view( 'admin/admin-page_contact', $data );
+		}
+
+		/**
+		 * page_store_locator()
+		 * @params - 
+		 * @return html layout page_store_locator
+		 */
+		function page_store_locator(){
+			$data = array(
+				'title' => 'Page Store Locator'
+			);
+			$this->load->view( 'admin/admin-page_store_locator', $data );
+		}
+
 		/**
 		 * main()
 		 */
