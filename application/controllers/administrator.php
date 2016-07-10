@@ -62,7 +62,7 @@
 				'title' => "User Password",
 				'menu_configactive' => 'active'
 			);
-			$this->load->view('admin/admin-user_password', $data);
+			$this->load->view('admin/admin-user_password2', $data);
 		}
 		
 		/**
