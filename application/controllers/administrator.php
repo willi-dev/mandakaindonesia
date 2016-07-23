@@ -1,28 +1,29 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 	
-	
+	define( "MANDAKA", "Mandaka" );
 	define( "MANDAKA_ADMIN", "Mandaka Indonesia - Administrator Page" );
 
 	class Administrator extends CI_Controller{
 		
-		
-
-		var $mandaka = "Mandaka Indonesia - Administrator Page";
-
 		public function __construct(){
 			parent::__construct();
 			$this->_is_logged_in();
-			$this->load->model('modeladmin');
+			$this->load->model( 'modeladmin' );
 		}
 		
+		/**
+		 * index()
+		 * @params -
+		 * @return html layout
+		 */
 		public function index(){
 			// redirect('administrator/main');
 			$data = array(
-				'web_title' => 'Mandaka',
+				'web_title' => MANDAKA,
 				'title' => 'Dashboard',
 				'menu_mainactive' => 'active'
 			);
-			$this->load->view('admin/admin-main', $data);
+			$this->load->view( 'admin/admin-main', $data );
 		}
 
 		/**
@@ -32,7 +33,8 @@
 		 */
 		public function all_products(){
 			$data = array(
-				'title' => 'Daftar Produk',
+				'web_title' => MANDAKA,
+				'title' => 'All Products',
 				'menu_produkactive' => 'active',
 				'loadProduct' => $this->modeladmin->loadProduct(),
 			);
@@ -46,6 +48,7 @@
 		 */
 		public function categories(){
 			$data = array(
+				'web_title' => MANDAKA,
 				'title' => "Categories",
 				'menu_kategoriactive' => 'active',
 				'loadCategory' => $this->modeladmin->loadCategory()
@@ -63,12 +66,12 @@
 				'user_id' => $this->tank_auth->get_user_id(),
 				'username' => $this->tank_auth->get_username(),
 				'password' => $this->tank_auth->get_password(),
-				'web_title' => 'Mandaka',
+				'web_title' => MANDAKA,
 				'title' => "User Password",
 				'parent_title' => 'User',
 				'menu_configactive' => 'active'
 			);
-			$this->load->view( 'admin/admin-user_password2', $data );
+			$this->load->view( 'admin/admin-user_password', $data );
 		}
 		
 		/**
@@ -77,23 +80,23 @@
 		 * @return -
 		 */
 		function update_password(){
-			$oldpass = $this->input->post('oldpassword');
-			$retypeoldpass = $this->input->post('retypeoldpassword');
-			$newpass = $this->input->post('newpassword');
-			$lengthnp = strlen($this->input->post('newpassword'));
+			$oldpass = $this->input->post( 'oldpassword' );
+			$retypeoldpass = $this->input->post( 'retypeoldpassword' );
+			$newpass = $this->input->post( 'newpassword' );
+			$lengthnp = strlen($this->input->post('newpassword') );
 			$password = $this->tank_auth->get_password();
 			
 			if($oldpass != $retypeoldpass){
-				$this->session->set_flashdata('messageerror', 'Old Password Not Match!');
-				redirect('administrator/config');
+				$this->session->set_flashdata( 'messageerror', 'Old Password Not Match!' );
+				redirect( 'administrator/user_password' );
 			}else{
 				if($lengthnp < 8){
-					$this->session->set_flashdata('messageerror', 'Password Min. 7 Characters..');
-					redirect('administrator/config');
+					$this->session->set_flashdata( 'messageerror', 'Password Min. 7 Characters..' );
+					redirect( 'administrator/user_password' );
 				}else{
 					$this->tank_auth->change_password($oldpass, $newpass);
-					$this->session->set_flashdata('messagesuccess', 'Change Password Succesfull!');
-					redirect('administrator/config');
+					$this->session->set_flashdata( 'messagesuccess', 'Change Password Succesfull!' );
+					redirect( 'administrator/user_password' );
 				}
 			}
 		}
@@ -105,6 +108,7 @@
 		 */
 		function page_about(){
 			$data = array(
+				'web_title' => MANDAKA,
 				'title' => 'Page About'
 			);
 			$this->load->view( 'admin/admin-page_about', $data );
@@ -117,6 +121,7 @@
 		 */
 		function page_contact(){
 			$data = array( 
+				'web_title' => MANDAKA,
 				'title' => 'Page Contact'
 			);
 			$this->load->view( 'admin/admin-page_contact', $data );
@@ -129,6 +134,7 @@
 		 */
 		function page_store_locator(){
 			$data = array(
+				'web_title' => MANDAKA,
 				'title' => 'Page Store Locator'
 			);
 			$this->load->view( 'admin/admin-page_store_locator', $data );
