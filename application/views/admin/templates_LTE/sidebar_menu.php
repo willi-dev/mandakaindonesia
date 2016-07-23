@@ -1,3 +1,7 @@
+<?php
+    $url_administrator = base_url() . 'administrator/';
+?>
+
 <!-- Left side column. contains the logo and sidebar -->
 <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
@@ -29,8 +33,8 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
-        <li class="active">
-            <a href="<?php echo base_url();?>administrator">
+        <li class="<?php echo isset($menu_mainactive) ? $menu_mainactive: '';?>">
+            <a href="<?php echo $url_administrator;?>">
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             </a>
         </li>
@@ -43,12 +47,12 @@
                 </span>
             </a>
             <ul class="treeview-menu">
-                <li><a href=""><i class="fa fa-cubes"></i> All Products</a></li>
-                <li><a href=""><i class="fa fa-plus"></i> Add New</a></li>
-                <li><a href=""><i class="fa fa-tag"></i> Categories</a></li>
+                <li><a href="<?php echo $url_administrator;?>all_products"><i class="fa fa-cubes"></i> All Products</a></li>
+                <li><a href="<?php echo $url_administrator;?>add_new_products"><i class="fa fa-plus"></i> Add New</a></li>
+                <li><a href="<?php echo $url_administrator;?>categories"><i class="fa fa-tag"></i> Categories</a></li>
             </ul>
         </li>
-        <li class="treeview">
+        <li class="treeview <?php echo isset($menu_configactive) ? $menu_configactive : '';?>">
             <a href="#">
                 <i class="fa fa-user"></i>
                 <span>User</span>
@@ -57,7 +61,7 @@
                 </span>
             </a>
             <ul class="treeview-menu">
-                <li><a href=""><i class="fa fa-unlock-alt"></i> User Password</a></li>
+                <li><a href="<?php echo $url_administrator;?>user_password"><i class="fa fa-unlock-alt"></i> User Password</a></li>
             </ul>
         </li>
         <li class="treeview">
@@ -69,9 +73,9 @@
                 </span>
             </a>
           <ul class="treeview-menu">
-            <li><a href="pages/UI/general.html"><i class="fa fa-file-text"></i> About Us</a></li>
-            <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Contact Us</a></li>
-            <li><a href="pages/UI/buttons.html"><i class="fa fa-map-marker"></i> Store Locator</a></li>
+            <li><a href="<?php echo $url_administrator;?>page_about"><i class="fa fa-file-text"></i> About Us</a></li>
+            <li><a href="<?php echo $url_administrator;?>page_contact"><i class="fa fa-circle-o"></i> Contact Us</a></li>
+            <li><a href="<?php echo $url_administrator;?>page_locator"><i class="fa fa-map-marker"></i> Store Locator</a></li>
           </ul>
         </li>
         
