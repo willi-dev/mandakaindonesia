@@ -1,9 +1,12 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 	
+	
+	define( "MANDAKA_ADMIN", "Mandaka Indonesia - Administrator Page" );
 
 	class Administrator extends CI_Controller{
 		
-		// DEFINE("MANDAKA", "Mandaka Indonesia - Administrator Page");
+		
+
 		var $mandaka = "Mandaka Indonesia - Administrator Page";
 
 		public function __construct(){
@@ -15,7 +18,8 @@
 		public function index(){
 			// redirect('administrator/main');
 			$data = array(
-				'title' => '',
+				'web_title' => 'Mandaka',
+				'title' => 'Dashboard',
 				'menu_mainactive' => 'active'
 			);
 			$this->load->view('admin/admin-main', $data);
@@ -46,7 +50,7 @@
 				'menu_kategoriactive' => 'active',
 				'loadCategory' => $this->modeladmin->loadCategory()
 			);
-			$this->load->view('admin/admin-categories', $data);
+			$this->load->view( 'admin/admin-categories', $data );
 		}
 
 		/**
@@ -59,10 +63,12 @@
 				'user_id' => $this->tank_auth->get_user_id(),
 				'username' => $this->tank_auth->get_username(),
 				'password' => $this->tank_auth->get_password(),
+				'web_title' => 'Mandaka',
 				'title' => "User Password",
+				'parent_title' => 'User',
 				'menu_configactive' => 'active'
 			);
-			$this->load->view('admin/admin-user_password2', $data);
+			$this->load->view( 'admin/admin-user_password2', $data );
 		}
 		
 		/**
