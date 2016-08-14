@@ -113,7 +113,7 @@
 										  <div class="modal-body">
 											<?php
 												$att = array('class' => 'form-horizontal', 'role' => 'form', 'method'=>'POST' );
-												echo form_open('administrator/kategori_ubah_proses', $att);
+												echo form_open('administrator/update_category', $att);
 											?>
 												<input type="hidden" name="id_kategori" value="<?php echo $l->id;?>" />
 												 <div class="form-group">
@@ -150,7 +150,7 @@
 												</div>
 										  </div>
 										  <div class="modal-footer">
-											<a href="<?php echo base_url();?>administrator/kategori_hapus/<?php echo $l->id;?>">
+											<a href="<?php echo base_url();?>administrator/delete_category/<?php echo $l->id;?>">
 												<button class="btn btn-info " type="button">
 													<i class="icon-trash"></i> Hapus
 												</button>
