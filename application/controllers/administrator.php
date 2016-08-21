@@ -50,7 +50,7 @@
 			$data = array(
 				'web_title' => MANDAKA,
 				'title' => "Categories",
-				'menu_kategoriactive' => 'active',
+				'menu_produkactive' => 'active',
 				'loadCategory' => $this->modeladmin->loadCategory()
 			);
 			$this->load->view( 'admin/admin-categories', $data );
@@ -164,7 +164,8 @@
 		public function page_about(){
 			$data = array(
 				'web_title' => MANDAKA,
-				'title' => 'Page About'
+				'title' => 'Page About',
+				'menu_pageactive' => 'active'
 			);
 			$this->load->view( 'admin/admin-page_about', $data );
 		}
@@ -177,7 +178,8 @@
 		public function page_contact(){
 			$data = array( 
 				'web_title' => MANDAKA,
-				'title' => 'Page Contact'
+				'title' => 'Page Contact',
+				'menu_pageactive' => 'active'
 			);
 			$this->load->view( 'admin/admin-page_contact', $data );
 		}
@@ -190,7 +192,8 @@
 		public function page_store_locator(){
 			$data = array(
 				'web_title' => MANDAKA,
-				'title' => 'Page Store Locator'
+				'title' => 'Page Store Locator',
+				'menu_pageactive' => 'active'
 			);
 			$this->load->view( 'admin/admin-page_store_locator', $data );
 		}
