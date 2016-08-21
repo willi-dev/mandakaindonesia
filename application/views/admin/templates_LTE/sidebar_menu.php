@@ -38,7 +38,7 @@
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             </a>
         </li>
-        <li class="treeview">
+        <li class="treeview <?php echo isset($menu_produkactive) ? $menu_produkactive : '' ;?>">
             <a href="#">
                 <i class="fa fa-cube"></i>
                 <span>Products</span>
@@ -64,7 +64,7 @@
                 <li><a href="<?php echo $url_administrator;?>user_password"><i class="fa fa-unlock-alt"></i> User Password</a></li>
             </ul>
         </li>
-        <li class="treeview">
+        <li class="treeview <?php echo isset( $menu_pageactive) ? $menu_pageactive: '';?>" >
             <a href="#">
                 <i class="fa fa-file"></i>
                 <span>Pages</span>
@@ -75,7 +75,7 @@
           <ul class="treeview-menu">
             <li><a href="<?php echo $url_administrator;?>page_about"><i class="fa fa-file-text"></i> About Us</a></li>
             <li><a href="<?php echo $url_administrator;?>page_contact"><i class="fa fa-circle-o"></i> Contact Us</a></li>
-            <li><a href="<?php echo $url_administrator;?>page_locator"><i class="fa fa-map-marker"></i> Store Locator</a></li>
+            <li><a href="<?php echo $url_administrator;?>page_store_locator"><i class="fa fa-map-marker"></i> Store Locator</a></li>
           </ul>
         </li>
         
