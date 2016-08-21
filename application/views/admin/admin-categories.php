@@ -104,61 +104,59 @@
 								foreach($loadCategory as $l){
 							?>
 								<div aria-hidden="true" aria-labelledby="ubahkategori<?php echo $l->id;?>Label" role="dialog" tabindex="-1" id="ubahkategori<?php echo $l->id;?>" class="modal fade">
-								  <div class="modal-dialog">
-									  <div class="modal-content">
-										  <div class="modal-header">
-											  <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-											  <h4 class="modal-title">Ubah Kategori : <?php echo $l->produk_kategori;?></h4>
-										  </div>
-										  <div class="modal-body">
-											<?php
-												$att = array('class' => 'form-horizontal', 'role' => 'form', 'method'=>'POST' );
-												echo form_open('administrator/update_category', $att);
-											?>
-												<input type="hidden" name="id_kategori" value="<?php echo $l->id;?>" />
-												 <div class="form-group">
-													<label class="col-lg-2 col-sm-2 control-label" for="produk_kategori">Kategori</label>
-													<div class="col-lg-10">
-														<input type="text" id="produk_kategori" class="form-control" name="produk_kategori" value="<?php echo $l->produk_kategori;?>"/>
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+												<h4 class="modal-title">Ubah Kategori : <?php echo $l->produk_kategori;?></h4>
+											</div>
+											<div class="modal-body">
+												<?php
+													$att = array('class' => 'form-horizontal', 'role' => 'form', 'method'=>'POST' );
+													echo form_open('administrator/update_category', $att);
+												?>
+													<input type="hidden" name="id_kategori" value="<?php echo $l->id;?>" />
+													<div class="form-group">
+														<label class="col-lg-2 col-sm-2 control-label" for="produk_kategori">Kategori</label>
+														<div class="col-lg-10">
+															<input type="text" id="produk_kategori" class="form-control" name="produk_kategori" value="<?php echo $l->produk_kategori;?>"/>
+														</div>
 													</div>
-												  </div>
-												  <div class="form-group">
-													  <div class="col-lg-offset-2 col-lg-10">
-														  <button type="submit" id="simpanperubahan" class="btn btn-info">Simpan Perubahan</button>
-													  </div>
-												  </div>
-											<?php
-											echo form_close();
-											?>
-										  </div>
-
-									  </div>
-								  </div>
+													<div class="form-group">
+														<div class="col-lg-offset-2 col-lg-10">
+															<button type="submit" id="simpanperubahan" class="btn btn-info">Simpan Perubahan</button>
+														</div>
+													</div>
+												<?php
+													echo form_close();
+												?>
+											</div>
+										</div>
+									</div>
 								</div>
 								
-								
 								<div aria-hidden="true" aria-labelledby="hapuskategori<?php echo $l->id;?>Label" role="dialog" tabindex="-1" id="hapuskategori<?php echo $l->id;?>" class="modal fade">
-								  <div class="modal-dialog">
-									  <div class="modal-content">
-										  <div class="modal-header">
-											  <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-											  <h4 class="modal-title">Hapus Kategori : <?php echo $l->produk_kategori;?></h4>
-										  </div>
-										  <div class="modal-body">
-												<div class="col-sm-12">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+												<h4 class="modal-title">Hapus Kategori : <?php echo $l->produk_kategori;?></h4>
+											</div>
+											<div class="modal-body">
+												<!-- <div class="col-md-12 col-lg-12 col-sm-12"> -->
 													<h3>Yakin ingin menghapus kategori <?php echo $l->produk_kategori;?> ? </h3>
-												</div>
-										  </div>
-										  <div class="modal-footer">
-											<a href="<?php echo base_url();?>administrator/delete_category/<?php echo $l->id;?>">
-												<button class="btn btn-info " type="button">
-													<i class="icon-trash"></i> Hapus
-												</button>
-											</a>
-											<button data-dismiss="modal" type="button" id="batalhapuskategori" class="btn btn-default"><i class="icon-mail-reply-all"></i> Batal</button>
-										  </div>
-									  </div>
-								  </div>
+												<!-- </div> -->
+											</div>
+											<div class="modal-footer">
+												<a href="<?php echo base_url();?>administrator/delete_category/<?php echo $l->id;?>">
+													<button class="btn btn-info " type="button">
+														<i class="icon-trash"></i> Hapus
+													</button>
+												</a>
+												<button data-dismiss="modal" type="button" id="batalhapuskategori" class="btn btn-default"><i class="icon-mail-reply-all"></i> Batal</button>
+											</div>
+										</div>
+									</div>
 								</div>
 
 							<?php
